@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
-import {  getData, updateData } from "../../../../__lib__/helpers/HttpService";
-import { Title } from "../../../../src/components/Icon";
-import Layout from "../../../../src/vuexy/Layout";
-import { adminAuthStatus } from "../../../../__lib__/helpers/Cookiehandler";
+import {  getData, updateData } from "../../../__lib__/helpers/HttpService";
+import { Title } from "../../../src/components/Icon";
+import Layout from "../../../src/vuexy/Layout";
+import { adminAuthStatus } from "../../../__lib__/helpers/Cookiehandler";
 
 const PodcastId = () => {
   const [disable, setDisable] = useState(false);

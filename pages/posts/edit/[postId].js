@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import Select from "react-select";
-import { League, TagIcon, Team, Title } from "../../../../src/components/Icon";
-import Layout from "../../../../src/vuexy/Layout";
-import { adminAuthStatus } from "../../../../__lib__/helpers/Cookiehandler";
-import { getData, updateData } from "../../../../__lib__/helpers/HttpService";
-import { adminAuth } from "../../../../__lib__/helpers/requireAuthentication";
+import { League, TagIcon, Team, Title } from "../../../src/components/Icon";
+import Layout from "../../../src/vuexy/Layout";
+import { adminAuthStatus } from "../../../__lib__/helpers/Cookiehandler";
+import { getData, updateData } from "../../../__lib__/helpers/HttpService";
+import { adminAuth } from "../../../__lib__/helpers/requireAuthentication";
 
 export default function Players() {
   const [loading, setLoading] = useState(true);
