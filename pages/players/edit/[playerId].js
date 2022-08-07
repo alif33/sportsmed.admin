@@ -8,8 +8,6 @@ import { getData, updateData } from "../../../__lib__/helpers/HttpService";
 import { adminAuth } from "../../../__lib__/helpers/requireAuthentication";
 import { League, Man, Team } from "../../../src/components/Icon";
 
-
-
 export default function SinglePlayer() {
   const [loading, setLoading] = useState(true);
   const [player, setPlayer] = useState(null);

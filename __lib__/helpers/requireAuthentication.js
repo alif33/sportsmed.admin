@@ -17,7 +17,7 @@ export function adminAuth(gssp) {
         } else {
             return {
                 redirect: {
-                    destination: '/admin/login',
+                    destination: '/login',
 
                 }
             }
