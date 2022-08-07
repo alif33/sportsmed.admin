@@ -1,20 +1,19 @@
 import dateFormat from "dateformat";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Trash2 } from "react-feather";
-import { League } from "../../src/components/Icon";
+import { League } from "../src/components/Icon";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import Select from "react-select";
 import ReactPlayer from 'react-player/lazy';
-import Layout from "../../src/vuexy/Layout";
-import { adminAuthStatus } from "../../__lib__/helpers/Cookiehandler";
-import { showErr } from "../../__lib__/helpers/ErrHandler";
+import Layout from "../src/vuexy/Layout";
+import { adminAuthStatus } from "../__lib__/helpers/Cookiehandler";
+import { showErr } from "../__lib__/helpers/ErrHandler";
 import {
   authPost,
   deleteData,
   getData
-} from "../../__lib__/helpers/HttpService";
-import { adminAuth } from "../../__lib__/helpers/requireAuthentication";
+} from "../__lib__/helpers/HttpService";
+import { adminAuth } from "../__lib__/helpers/requireAuthentication";
 
 
 export default function Home() {

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { League, Man, Team } from "../../../src/components/Icon";
-import Card from "../../../src/components/dashboard/player/Card";
-import Layout from "../../../src/vuexy/Layout";
-import { getData, postData } from "../../../__lib__/helpers/HttpService";
-import { adminAuth } from "../../../__lib__/helpers/requireAuthentication";
-import GroupWise from "../../../src/components/dashboard/player/GroupWise";
+import { League, Man, Team } from "../../src/components/Icon";
+import Layout from "../../src/vuexy/Layout";
+import { getData, postData } from "../../__lib__/helpers/HttpService";
+import { adminAuth } from "../../__lib__/helpers/requireAuthentication";
+import GroupWise from "../../src/components/dashboard/player/GroupWise";
 
 export default function Players() {
   const [loading, setLoading] = useState(true);
