@@ -14,7 +14,7 @@ export default function Sidebar({ toggle, setToggle }) {
     cookie.remove("_admin", { path: "/" });
     if (!cookie.get('_admin')) {
       console.log(!cookie.get('_admin'))
-      router.push("/admin/login");
+      router.push("/login");
 
     }
   };
@@ -22,7 +22,7 @@ export default function Sidebar({ toggle, setToggle }) {
     <div className="main-menu menu-fixed menu-light menu-accordion menu-shadow">
       <div className="navbar-header">
         <ul className="nav navbar-nav flex-row">
-          <li className="nav-item me-auto"><Link href="/admin/dashboard"><a className="navbar-brand"><span className="brand-logo">
+          <li className="nav-item me-auto"><Link href="/dashboard"><a className="navbar-brand"><span className="brand-logo">
             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height={24}>
               <defs>
                 <linearGradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -65,51 +65,51 @@ export default function Sidebar({ toggle, setToggle }) {
       <div className="shadow-bottom" />
       <div className="main-menu-content">
         <ul className="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li className={`${router.pathname === '/admin/dashboard' && 'active'} nav-item`}>
-            <Link href="/admin/dashboard">
+          <li className={`${router.pathname === '/dashboard' && 'active'} nav-item`}>
+            <Link href="/dashboard">
               <a className="d-flex align-items-center" > <Home /> <span className="menu-title text-truncate" data-i18n="Home">Home</span></a>
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/admin/players' && 'active'} nav-item`}>
-            <Link href="/admin/players">
+          <li className={`${router.pathname === '/players' && 'active'} nav-item`}>
+            <Link href="/players">
               <a className="d-flex align-items-center" >
-                <Man color={router.pathname === '/admin/players' ? '#fff' : '#00000'} />
+                <Man color={router.pathname === '/players' ? '#fff' : '#00000'} />
                 <span className="menu-title text-truncate" data-i18n="Home">Players</span></a>
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/admin/tags' && 'active'} nav-item`}>
-            <Link href="/admin/tags">
+          <li className={`${router.pathname === '/tags' && 'active'} nav-item`}>
+            <Link href="/tags">
               <a className="d-flex align-items-center" >
-                <TagIcon color={router.pathname === '/admin/tags' ? '#fff' : '#00000'} />
+                <TagIcon color={router.pathname === '/tags' ? '#fff' : '#00000'} />
                 <span className="menu-title text-truncate" data-i18n="Home">Post Tags</span></a>
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/admin/posts' && 'active'} nav-item`}>
-            <Link href="/admin/posts">
-              <a className="d-flex align-items-center" > <PostIcon color={router.pathname === '/admin/posts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Posts</span></a>
+          <li className={`${router.pathname === '/posts' && 'active'} nav-item`}>
+            <Link href="/posts">
+              <a className="d-flex align-items-center" > <PostIcon color={router.pathname === '/posts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Posts</span></a>
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/admin/watches' && 'active'} nav-item`}>
-            <Link href="/admin/watches">
+          <li className={`${router.pathname === '/watches' && 'active'} nav-item`}>
+            <Link href="/watches">
               <a className="d-flex align-items-center" >
-                <TagIcon color={router.pathname === '/admin/watches' ? '#fff' : '#00000'} />
+                <TagIcon color={router.pathname === '/watches' ? '#fff' : '#00000'} />
                 <span className="menu-title text-truncate" data-i18n="Home">Watches</span></a>
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/admin/podcasts' && 'active'} nav-item`}>
-            <Link href="/admin/podcasts">
+          <li className={`${router.pathname === '/podcasts' && 'active'} nav-item`}>
+            <Link href="/podcasts">
               <a className="d-flex align-items-center" >
-                <PodcastIcon color={router.pathname === '/admin/podcasts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Podcasts</span></a>
+                <PodcastIcon color={router.pathname === '/podcasts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Podcasts</span></a>
             </Link>
           </li>
 
           <li className="nav-item">
-            <a onClick={() => handleLogout()} className="d-flex align-items-center" > <LogoutIcon /> <span className="menu-title text-truncate" data-i18n="Home">Logout</span></a>
+            <a onClick={ () => handleLogout() } className="d-flex align-items-center" > <LogoutIcon /> <span className="menu-title text-truncate" data-i18n="Home">Logout</span></a>
           </li>
 
         </ul>

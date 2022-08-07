@@ -36,9 +36,3 @@ export const showErr = err =>{
         .error(err.message.message)
 
 }
-
-export const toastErr = err =>{
-     toast
-        .error(err[0])
-}
-
