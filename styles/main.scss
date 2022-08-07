@@ -1,0 +1,664 @@
+// Already Existed code by client
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$black: #000;
+$white: #ffffff;
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#nba,
+#mlb,
+#nfl,
+#fullpage,
+#watch,
+#about,
+#disclaimer,
+#podcast,
+#login,
+#playPodCast {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $black;
+}
+
+#fullpage {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: calc(100%);
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.7);
+  }
+  .fullpage_box {
+    z-index: 100;
+    p {
+      line-height: 1.6;
+    }
+  }
+}
+
+.allepisodes {
+  width: max-content;
+  cursor: pointer;
+  i {
+    margin-top: 0.3rem;
+  }
+}
+.audiobox {
+  position: relative;
+}
+
+.porgresbar {
+  width: 80vw;
+  color: white;
+}
+
+.gold {
+  height: 44px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.controlBtn {
+  button {
+    border: none;
+    outline: none;
+    color: white;
+    background: transparent;
+    &:nth-child(3) {
+      svg {
+        width: 40px;
+      }
+    }
+    svg {
+      width: 20px;
+      margin: 0 1rem;
+
+      &:hover {
+        transition: 0.2s linear;
+        color: rgb(176, 176, 176);
+      }
+    }
+  }
+}
+
+.prbBox {
+  button {
+    background: transparent;
+    color: white;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .sliderBox {
+    flex-direction: column;
+  }
+}
+
+// loader
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 1);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+  animation: load 0.3s linear alternate infinite;
+}
+@keyframes load {
+  0% {
+    color: aqua;
+  }
+  100% {
+    color: white;
+  }
+}
+
+// ============== login box design
+#login {
+  justify-content: center;
+  align-items: center;
+  color: white;
+  form {
+    background-color: #000;
+    min-width: 40%;
+    min-height: 50vh;
+    padding: 1.5rem 2rem;
+    margin-top: -5rem;
+    box-shadow: 0px 6px 10px 0.4px rgba($color: #efefef, $alpha: 0.4);
+    border-radius: 1rem;
+    label {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin-top: 0.2rem;
+      background: transparent;
+      border: none;
+      color: white;
+      border-bottom: 2px solid white;
+      outline: none;
+      &:focus {
+        color: cyan;
+      }
+    }
+    button {
+      margin-top: 1rem;
+      border: none;
+      outline: none;
+      padding: 0.6rem 2rem;
+      border-radius: 0.4rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.nabBtn {
+  button {
+    &:focus {
+      outline: unset;
+      box-shadow: unset;
+    }
+  }
+}
+
+// hover effect in card button
+.hoverBtn {
+  background: rgba($color: #000000, $alpha: 0.4);
+  color: $white;
+  transition: 0.3s linear;
+  border-radius: 10px;
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+}
+
+.card {
+  transform: scale(0.9);
+  border-radius: 14px;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.3);
+  }
+}
+#podcast {
+  border: 5px solid rgb(255, 255, 255);
+}
+.podcastBox {
+  cursor: pointer;
+  .podcastImage {
+    position: relative;
+    i {
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      font-size: 2rem;
+      display: none;
+      transition: 0.2s linear;
+    }
+    img {
+      position: relative;
+      width: 200px;
+    }
+  }
+  &:hover {
+    i {
+      display: block;
+      transition: 0.2s linear;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+}
+// searchbar
+.searchbar {
+  position: relative;
+  width: max-content;
+  input {
+    &:focus {
+      border: unset;
+      box-shadow: unset;
+      outline: unset;
+    }
+  }
+}
+
+// ================ 😘 Disclime Page designs
+#disclaimer {
+  background: rgba($color: #000000, $alpha: 0.7);
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/images/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -111;
+  }
+  .infobox {
+    // z-index: 10000;
+    color: $white;
+  }
+}
+
+// =============== Menu bar Desing
+.MenuIcon {
+  i {
+    font-size: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 40%;
+    right: 2rem;
+    display: none;
+  }
+}
+
+// ===================== Navbar design
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  .nav {
+    margin-right: 3rem;
+    margin-left: -6em;
+    .navSearchBar {
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      input {
+        background: black;
+        border-radius: 10px;
+        color: white;
+        padding: 0.5rem 1rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        margin: 0 1rem;
+        background: black;
+        color: white;
+        border-radius: 0.3rem;
+
+        &:focus {
+          background: white;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+// =========================😘😘😘 Already Writed by owner
+.mainBody {
+  background: rgba($color: #000000, $alpha: 0.7);
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/images/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -111;
+  }
+}
+
+.NavmainWrapper {
+  background-color: $black;
+  padding: 15px 0px;
+}
+
+.navbarWrapper {
+  display: flex;
+}
+
+.NavLogoWarpper {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.navlogoSocial-wrapper ul {
+  display: flex;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.navlogoSocial-wrapper ul li {
+  list-style: none;
+  padding-right: 15px;
+}
+.navlogoSocial-wrapper ul li a {
+  text-decoration: none;
+}
+.navlogoSocial-wrapper ul li a i {
+  color: $white;
+  font-size: 20px;
+}
+.navLogo a img {
+  height: 93px;
+  width: 93px;
+}
+.navlogoSocial-wrapper p {
+  color: $white;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 0px;
+}
+.navlogoSocial-wrapper {
+  padding-left: 10px;
+}
+// .navmenuItem .nav-item a {
+//   color: $white;
+//   text-decoration: none;
+// }
+
+.linkBox {
+  li {
+    padding: 6px 8px;
+    a {
+      color: $white;
+      &:hover {
+        transition: 0.2s ease;
+        color: purple;
+      }
+    }
+  }
+}
+.navbarmemuWrapper {
+  width: 60%;
+}
+
+.menulist-profile-btn {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.Navar-loginButton {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navSearchbar .btn-outline-success {
+  color: $white;
+  border-color: $white;
+}
+.navSearchbar .btn-outline-success:hover {
+  background-color: transparent;
+}
+.navSearchbar input {
+  outline: unset;
+  border: unset;
+}
+.Navar-loginButton button {
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 6px 8px;
+}
+.Navar-loginButton button:nth-child(1) {
+  margin-right: 8px;
+}
+
+.BannerWrapper {
+  padding: 60px 0px;
+}
+.FooterWrapper {
+  margin-top: auto;
+  padding: 50px 0px;
+  background-color: $black;
+  text-align: center;
+}
+.FooterWrapper h1 {
+  color: $white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+.FooterWrapper p {
+  color: $white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.FooterWrapper a {
+  text-decoration: none;
+  color: $white;
+  margin-bottom: 15px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.FooterWrapper ul {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  margin: 10px 0px;
+}
+.FooterWrapper ul li {
+  list-style: none;
+  padding: 8px 10px;
+}
+
+.FooterWrapper ul li a {
+  text-decoration: none;
+}
+.FooterWrapper ul li a i {
+  font-size: 20px;
+  color: $white;
+}
+
+.DuplicateMenuList ul li {
+  padding: 11px 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: end;
+  font-weight: 500;
+  letter-spacing: 0.2;
+  background-color: $black;
+  margin: 10px 0px;
+  padding-right: 1rem;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover {
+  background-color: $white;
+  color: $black;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover a {
+  color: $black;
+}
+.DuplicateMenuList ul li a {
+  /* text-transform: capitalize; */
+  color: $white;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.SubcategoryWrapper ul li {
+  padding: 11px 15px;
+  width: max-content;
+  text-align: end;
+  background-color: $black;
+  margin: 10px 0px;
+  list-style: none;
+  cursor: pointer;
+}
+.SubcategoryWrapper ul li:hover a {
+  color: $black !important;
+}
+.SubcategoryWrapper ul li a {
+  color: $white !important;
+}
+
+.SubcategoryWrapper {
+  position: relative;
+}
+.DuplicateMenuList ul li ul {
+  display: none;
+  padding-left: 10px;
+}
+/* .DuplicateMenuList ul li :hover ul{
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+} */
+.SubcategoryWrapper:hover ul {
+  display: block;
+  position: absolute;
+  left: 100%;
+  bottom: 0%;
+  width: 100%;
+}
+
+.BannerMainLogo img {
+  max-width: 100%;
+}
+
+.BannerMainLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .navbarWrapper {
+    display: block;
+    position: relative;
+  }
+  .navbarmemuWrapper {
+    width: 100%;
+  }
+
+  .NavLogoWarpper {
+    width: 100%;
+  }
+
+  .Navar-loginButton {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .navmenuItem ul li {
+    padding: 10px 8px;
+  }
+  .Search-ItemListWrapper {
+    padding: 30px 0px;
+  }
+  .DuplicateMenuList {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .podcastBox {
+    flex-direction: column;
+  }
+  .navLogo a img {
+    height: 60px;
+    width: 60px;
+  }
+  .MenuIcon {
+    i {
+      display: block;
+      cursor: pointer;
+      &:active {
+        color: aqua;
+      }
+    }
+  }
+  header {
+    position: relative;
+  }
+  .Navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+    z-index: 1000;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    transform-origin: top;
+    transition: 0.2s linear;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    display: none;
+    ul {
+      flex-direction: column;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+      text-align: center;
+      .linkBox {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+

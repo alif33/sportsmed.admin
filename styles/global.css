@@ -1,0 +1,2118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#nba,
+#mlb,
+#nfl,
+#fullpage,
+#watch,
+#about,
+#disclaimer,
+#podcast,
+#login,
+#playPodCast {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000;
+}
+
+#fullpage {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: calc(100%);
+  position: relative;
+}
+
+#fullpage::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#fullpage .fullpage_box {
+  z-index: 100;
+}
+
+#fullpage .fullpage_box p {
+  line-height: 1.6;
+}
+
+.allepisodes {
+  width: max-content;
+  cursor: pointer;
+}
+
+.allepisodes i {
+  margin-top: 0.3rem;
+}
+
+.audiobox {
+  position: relative;
+}
+
+.porgresbar {
+  width: 80vw;
+  color: white;
+}
+
+.gold {
+  height: 44px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.controlBtn button {
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+}
+
+.controlBtn button:nth-child(3) svg {
+  width: 40px;
+}
+
+.controlBtn button svg {
+  width: 20px;
+  margin: 0 1rem;
+}
+
+.controlBtn button svg:hover {
+  transition: 0.2s linear;
+  color: #b0b0b0;
+}
+
+.prbBox button {
+  background: transparent;
+  color: white;
+  border: none;
+}
+
+@media screen and (max-width: 769px) {
+  .sliderBox {
+    flex-direction: column;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 1);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+  animation: load 0.3s linear alternate infinite;
+}
+
+@keyframes load {
+  0% {
+    color: aqua;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+#login {
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#login form {
+  background-color: #000;
+  min-width: 40%;
+  min-height: 50vh;
+  padding: 1.5rem 2rem;
+  margin-top: -5rem;
+  box-shadow: 0px 6px 10px 0.4px rgba(239, 239, 239, 0.4);
+  border-radius: 1rem;
+}
+
+#login form label {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+#login form input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 2px solid white;
+  outline: none;
+}
+
+#login form input:focus {
+  color: cyan;
+}
+
+#login form button {
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.6rem 2rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+.nabBtn button:focus {
+  outline: unset;
+  box-shadow: unset;
+}
+
+.hoverBtn {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: 0.3s linear;
+  border-radius: 10px;
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hoverBtn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.card {
+  transform: scale(0.9);
+  border-radius: 14px;
+}
+
+.card-body {
+  padding: 0 0 !important;
+  padding-top: 10px !important;
+}
+
+.card-footer {
+  padding: 0 0 !important;
+}
+
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#podcast {
+  border: 5px solid #fff;
+}
+
+.podcastBox {
+  cursor: pointer;
+}
+
+.podcastBox .podcastImage {
+  position: relative;
+}
+
+.podcastBox .podcastImage i {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  font-size: 2rem;
+  display: none;
+  transition: 0.2s linear;
+}
+
+.podcastBox .podcastImage img {
+  position: relative;
+  width: 200px;
+}
+
+.podcastBox:hover i {
+  display: block;
+  transition: 0.2s linear;
+}
+
+.podcastBox:hover img {
+  cursor: pointer;
+}
+
+.searchbar {
+  position: relative;
+  width: max-content;
+}
+
+.searchbar input:focus {
+  border: unset;
+  box-shadow: unset;
+  outline: unset;
+}
+
+#disclaimer {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+#disclaimer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -111;
+}
+
+#disclaimer .infobox {
+  color: #fff;
+}
+
+.MenuIcon i {
+  font-size: 2.5rem;
+  color: white;
+  position: absolute;
+  top: 40%;
+  right: 2rem;
+  display: none;
+}
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.Navbar .nav {
+  margin-right: 3rem;
+  margin-left: -6em;
+}
+
+.Navbar .nav .navSearchBar {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.Navbar .nav .navSearchBar input {
+  background: black;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.Navbar .nav .navSearchBar button {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  background: black;
+  color: white;
+  border-radius: 0.3rem;
+}
+
+.Navbar .nav .navSearchBar button:focus {
+  background: white;
+  color: #000;
+}
+
+.mainBody {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.mainBody::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -111;
+}
+
+.NavmainWrapper {
+  background-color: #000;
+  padding: 15px 0px;
+}
+
+.navbarWrapper {
+  display: flex;
+}
+
+.NavLogoWarpper {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.navlogoSocial-wrapper ul {
+  display: flex;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.navlogoSocial-wrapper ul li {
+  list-style: none;
+  padding-right: 15px;
+}
+
+.navlogoSocial-wrapper ul li a {
+  text-decoration: none;
+}
+
+.navlogoSocial-wrapper ul li a i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.navLogo a img {
+  height: 93px;
+  width: 93px;
+}
+
+.navlogoSocial-wrapper p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 425px) {
+  .navLogo img {
+    width: 55px;
+  }
+
+  .navlogoSocial-wrapper p {
+    font-size: 13px;
+  }
+}
+
+.navlogoSocial-wrapper {
+  padding-left: 10px;
+}
+
+.linkBox li {
+  padding: 6px 8px;
+}
+
+.linkBox li a {
+  color: #fff;
+}
+
+.linkBox li a:hover {
+  transition: 0.2s ease;
+  color: purple;
+}
+
+.navbarmemuWrapper {
+  width: 60%;
+}
+
+.menulist-profile-btn {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.Navar-loginButton {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navSearchbar .btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+
+.navSearchbar .btn-outline-success:hover {
+  background-color: transparent;
+}
+
+.navSearchbar input {
+  outline: unset;
+  border: unset;
+}
+
+.Navar-loginButton button {
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 6px 8px;
+}
+
+.Navar-loginButton button:nth-child(1) {
+  margin-right: 8px;
+}
+
+.BannerWrapper {
+  padding: 60px 0px;
+}
+
+.FooterWrapper {
+  margin-top: auto;
+  padding: 50px 0px;
+  background-color: #000;
+  text-align: center;
+}
+
+.FooterWrapper h1 {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.FooterWrapper p {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.FooterWrapper a {
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 15px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.FooterWrapper ul {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  margin: 10px 0px;
+}
+
+.FooterWrapper ul li {
+  list-style: none;
+  padding: 8px 10px;
+}
+
+.FooterWrapper ul li a {
+  text-decoration: none;
+}
+
+.FooterWrapper ul li a i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.DuplicateMenuList ul li {
+  padding: 11px 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: end;
+  font-weight: 500;
+  letter-spacing: 0.2;
+  background-color: #000;
+  margin: 10px 0px;
+  padding-right: 1rem;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover a {
+  color: #000;
+}
+
+.DuplicateMenuList ul li a {
+  /* text-transform: capitalize;
+	 */
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.SubcategoryWrapper ul li {
+  padding: 11px 15px;
+  width: max-content;
+  text-align: end;
+  background-color: #000;
+  margin: 10px 0px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.SubcategoryWrapper ul li:hover a {
+  color: #000 !important;
+}
+
+.SubcategoryWrapper ul li a {
+  color: #fff !important;
+}
+
+.SubcategoryWrapper {
+  position: relative;
+}
+
+.DuplicateMenuList ul li ul {
+  display: none;
+  padding-left: 10px;
+}
+
+/* .DuplicateMenuList ul li :hover ul{
+	 display: block;
+	 position: absolute;
+	 left: 100%;
+	 top: 0;
+}
+ */
+.SubcategoryWrapper:hover ul {
+  display: block;
+  position: absolute;
+  left: 100%;
+  bottom: 0%;
+  width: 100%;
+}
+
+.BannerMainLogo img {
+  max-width: 100%;
+}
+
+.BannerMainLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .navbarWrapper {
+    display: block;
+    position: relative;
+  }
+
+  .navbarmemuWrapper {
+    width: 100%;
+  }
+
+  .NavLogoWarpper {
+    width: 100%;
+  }
+
+  .Navar-loginButton {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .navmenuItem ul li {
+    padding: 10px 8px;
+  }
+
+  .Search-ItemListWrapper {
+    padding: 30px 0px;
+  }
+
+  .DuplicateMenuList {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .podcastBox {
+    flex-direction: column;
+  }
+
+  .navLogo a img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .MenuIcon i {
+    display: block;
+    cursor: pointer;
+  }
+
+  .MenuIcon i:active {
+    color: aqua;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .Navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+    z-index: 99;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    transform-origin: top;
+    transition: 0.2s linear;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    display: none;
+  }
+
+  .Navbar ul {
+    flex-direction: column;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .Navbar ul .linkBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.container-50 {
+  width: 35%;
+  margin: 0 auto;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
+.c-white {
+  background-color: #fff !important;
+}
+
+.container-75 {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* ============================= PlayerCardBox ============================ */
+.PlayerCardBox img {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.PlayerCardBox .iconDelete {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.PlayerCardBox .iconDelete:hover {
+  color: #776bf0;
+  transition: 0.2s linear;
+}
+
+.PlayerCardBox .iconEdit {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #776bf0;
+}
+
+.PlayerCardBox .iconEdit:hover {
+  color: tomato;
+  transition: 0.2s linear;
+}
+
+.show-tag {
+  padding: 10px 15px;
+  border: 1px solid #776bf0;
+  border-radius: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.show-tag i {
+  padding-left: 10px;
+}
+
+.user_sidebar {
+  background-color: #000000d1;
+  padding: 0px 12px;
+}
+
+.user_sidebar .image_area {
+  width: 85px;
+  height: 85px;
+}
+
+.user_side {
+  margin-left: 12px;
+}
+
+.user_side .item_list {
+  background-color: #434242;
+  margin: 12px 0px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.user_side .item_list:hover {
+  background-color: #656464;
+  margin: 12px 0px;
+  border-radius: 5px;
+}
+
+.active_link {
+  background-color: #656464;
+  margin: 12px 0px;
+  border-radius: 5px;
+}
+
+.user_side .item_name {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  background: rgb(42 42 42 / 50%) !important;
+}
+
+.popup-content {
+  height: 500px;
+  border: none !important;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111 !important;
+  box-shadow: 0px 4px 20px 10px rgb(87 128 255 / 12%);
+
+  @media (max-width: 992px) {
+    width: 60% !important;
+  }
+
+  @media (max-width: 768px) {
+    width: 80% !important;
+  }
+
+  @media (max-width: 580px) {
+    height: 390px;
+  }
+}
+
+.modal {
+  font-size: 12px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal > .modal-title {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  margin-left: 0;
+}
+
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  line-height: 20px;
+  right: 20px;
+  top: 12px;
+  font-size: 32px;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid;
+  color: #fff;
+  height: 35px;
+  width: 35px;
+}
+
+.login-form .form-group {
+  margin: 18px 0;
+}
+
+.login-form .form-group label {
+  width: 100%;
+  font-size: 16px;
+  margin: 5px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 5px 14px;
+  font-size: 18px;
+  border: 1px solid #776bf0;
+  border-radius: 5px;
+}
+
+.login-btn {
+  border: none;
+  background: linear-gradient(90deg, #25e2f5, #f5bf25);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 19px;
+  font-weight: 600;
+  width: 115px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.login-btn:hover {
+  background: linear-gradient(180deg, #25e2f5, #f5bf25);
+  color: #fff;
+  box-shadow: 0 0 3px 0px #fff;
+}
+
+.lig-item {
+  margin-bottom: 6px;
+}
+
+.lig-item span {
+  background: #25d366;
+  color: #fff;
+  font-size: 14px;
+}
+
+.lig-item p span {
+  color: #5e5873;
+  font-weight: 500;
+  padding: 0px 12px;
+  border-radius: 13px;
+}
+
+.team-item {
+  margin-bottom: 6px;
+}
+
+.team-item span {
+  background: #007fb1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 12px;
+  border-radius: 13px;
+}
+
+.admin-login {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login-form {
+  width: 35%;
+  background: #fff;
+  padding: 40px 80px;
+  border-radius: 20px;
+}
+
+.form-group {
+}
+
+/*==========================
+_smd_navbar
+===========================*/
+
+._smd_top_heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+._smd_top_heading ._smd_top_heading_section {
+}
+
+._smd_top_heading ._smd_top_heading_section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+._smd_top_heading ._smd_top_heading_section ul li {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+._smd_top_heading ._smd_top_heading_section ul li a {
+  display: inline-block;
+  margin: 0 15px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+._smd_top_heading ._smd_top_heading_section ul li img {
+}
+
+._smd_border-right {
+  border-right: 2px solid #fff;
+}
+
+._smd_top_social {
+  width: 15%;
+}
+
+._smd_top_social ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+._smd_top_middle {
+  width: 60%;
+}
+
+._smd_top_reg {
+  width: 25%;
+}
+
+._smd_top_reg ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+._smd_top_reg ul li {
+  text-align: center;
+}
+
+._smd_top_reg ul li img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.bg-black {
+  background-color: #000000 !important;
+}
+
+._smd_navbar_border {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+._smd_navbar {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+._smd_nav_item a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f5f5f5 !important;
+  margin: 0 16px;
+}
+
+._smd_headers_article {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+._smd_headers_article ._smd_article_card {
+  width: 25%;
+  position: relative;
+  height: 150px;
+  margin: 0 10px;
+}
+
+._smd_headers_article ._smd_article_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+._smd_headers_article ._smd_article_card h4 {
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  color: #fff;
+  width: 73px;
+  height: 23.87px;
+  background: #cb3939;
+  border-radius: 3px;
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 23.87px;
+}
+
+/*=================
+_smd_scoreSlider
+===================*/
+
+._smd_scoreSlider_date_n h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: -0.04em;
+  color: #131313;
+}
+
+._smd_scoreSlider_date_n p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: -0.04em;
+  color: #131313;
+}
+
+._smd_scoreSlider_section {
+  height: 56px;
+  width: 90%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  overflow-x: auto;
+}
+
+._smd_scoreSlider_section::-webkit-scrollbar {
+  height: 10px;
+}
+
+._smd_scoreSlider_section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+._smd_scoreSlider_section::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+._smd_scoreSlider_section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+._smd_scoreSlider_dropdown {
+  height: 100%;
+  width: 10%;
+}
+
+._smd_scoreSlider_dropdown_btn {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 15px;
+  border: 0;
+  border-right: 0px solid !important;
+  background: transparent;
+}
+
+._smd_nfl_scroe_card {
+  display: grid;
+  grid-template-columns: 1fr 84px;
+}
+
+._smd_nfl_Score_text1 {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #202121;
+}
+
+._smd_inner_table {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+._smd_nfl_scroe_card_inner {
+  width: auto;
+}
+
+._smd_nfl_scroe_card_child2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+._smd_inner_table p {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+._smd_date {
+  margin-left: 26px !important;
+}
+
+._tex_num_one::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #d70404;
+  margin-right: 5px;
+}
+
+._tex_num_two::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-right: 5px;
+}
+
+._smd_squreShape {
+  width: 28px;
+}
+
+._smd_top_story_main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
+.smd_border_bottom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+}
+
+.smd_border_bottom_Headlines {
+  color: #5c5656 !important;
+}
+
+.smd_border_bottom_Headlines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+  height: 5px;
+  background-color: #5c5656;
+}
+
+._smd_Upcoming_events {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  background: #d70404;
+  padding: 10px;
+}
+
+._smd_player_news_main {
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 5fr 4fr 3fr;
+  grid-gap: 30px;
+}
+
+._smd_player_news_main {
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 5fr 4fr 3fr;
+  grid-gap: 30px;
+}
+
+.bf_title {
+  display: inline-block;
+}
+
+.bf_title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+}
+
+._smd_bf_grid_main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+._smd_bf_card_desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+/* nfl css start */
+/* ------------------------------------------- */
+
+.nfl_con {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.nfl_title1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 33px;
+  color: #121212;
+}
+
+.nfl_para1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 37px;
+  color: #5c5656;
+}
+
+.nfl_card_title1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.18px;
+  color: #000000;
+}
+
+.nfl_card_title2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  display: inline-block;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: #000000;
+  position: relative;
+}
+
+.nfl_card_Desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.18px;
+  color: #5c5656;
+  margin-top: 10px;
+}
+
+._nfl a {
+  color: #6e6b7b !important;
+}
+
+._LandingPage a {
+  color: #6e6b7b !important;
+}
+
+/* nfl sec one */
+.nfl_sec_one {
+  position: relative;
+}
+
+.nfl_nav {
+  background-color: #d6d6d6;
+  overflow: auto;
+}
+
+.nfl_nav_ul {
+  margin-bottom: 0px;
+  width: max-content;
+}
+
+.nfl_nav_ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px 15px;
+}
+
+.nfl_nav_ul a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #121212;
+}
+
+.nfl_sec_one_img {
+  position: relative;
+  filter: brightness(0.7);
+  height: 360px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.nfl_sec_one_img::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(6, 21, 57, 0.98);
+}
+
+.nfl_sec_one_overlay {
+  background: rgba(0, 0, 0, 0.61);
+  padding: 15px 20px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nfl_sec_one_overlay h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.nfl_sec_one_overlay p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.nfl_video_icon {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* nfl sec one */
+
+/* nfl sec two start */
+.nfl_sec_two {
+  padding: 40px 0px;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-gap: 30px;
+}
+
+.nfl_s2_img {
+  width: 100%;
+}
+
+.nfl_comment_num::before {
+  content: url(../public/images/landing_Page/comment.svg);
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.nfl_sec_two_middle:first-child {
+  margin-top: 0px;
+}
+
+.nfl_sec_two_middle {
+  margin-top: 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.nfl_3rd_title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #5c5656;
+  position: relative;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.nfl_3rd_title:hover::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #5c5656;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.nfl_3rd_title_active {
+  position: relative;
+}
+
+.nfl_3rd_title_active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #5c5656;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.nfl_sec2_vertical_line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -16px;
+  height: 80%;
+  width: 2px;
+  background-color: #d4d4d4;
+}
+
+.nfl_S2_3rd_card {
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  gap: 20px;
+}
+
+.nfl_S2_3rd_card:first-child {
+  margin-top: 0px !important;
+}
+
+.nfl_S2_3rd_card p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: #5c5656;
+}
+
+.see_all_news {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5c5656;
+  text-align: end;
+  margin-top: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.see_all_news:hover {
+  color: #5c5656;
+}
+
+.nfl_hr_line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+/* nfl sec two end*/
+
+/* nfl sec three start */
+.nfl_sec_grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-gap: 30px;
+}
+
+.nfl_sec_three {
+  padding: 30px 0px;
+}
+
+.nfl_sec3_title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #121212;
+  position: relative;
+  margin-right: 30px;
+}
+
+.nfl_sec3_title::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #121212;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.nfl_S3__ul {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.18px;
+  color: #5c5656;
+  margin-top: 20px;
+}
+
+.nfl_S3__ul li {
+  margin-bottom: 30px;
+}
+
+/* nfl sec three end */
+
+/* nfl sec four start */
+.nfl_sec_four {
+  background: #121212;
+  padding: 40px 0px;
+}
+
+.nfl_S4_overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(18, 18, 18, 0.15);
+  box-shadow: inset 0px -64px 4px 59px rgba(0, 0, 0, 0.61);
+  width: 100%;
+}
+
+.nfl_S4_overlay p {
+  padding: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.18px;
+  color: #ffffff;
+}
+
+.nfl_Article {
+  background: #cb3939;
+  border-radius: 3px;
+  padding: 2px 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 26px;
+  color: #ffffff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* nfl sec four end */
+
+/* nfl sec five start */
+.nfl_sec5_grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 80px;
+}
+
+.nfl_S5_middle_card {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+  padding-top: 20px;
+}
+
+.nfl_S5_middle_card:last-child {
+  border-bottom: 0px solid rgba(0, 0, 0, 0.54);
+}
+
+/* nfl sec five end */
+
+/* nfl sec six start */
+.nfl_S6 {
+  padding: 40px 0px;
+}
+
+.nfl_card_Desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: -0.04em;
+  color: #121212;
+}
+
+.nfl_S6_card_main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
+}
+
+/* nfl sec six end */
+
+/* nfl sec seven start */
+.nfl_S7 {
+  padding: 40px 0px;
+}
+
+.nfl_S7_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.225px;
+  text-transform: uppercase;
+  color: #c4c4bc;
+}
+
+.nfl_S7_item {
+  color: #333333;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.25px;
+  color: #333333;
+}
+
+.nfl_S7_item:hover {
+  color: #333333;
+}
+
+.nfl_S7_ul li {
+  margin-top: 15px;
+}
+
+.nfl_S7_item span {
+  margin-left: 10px;
+}
+
+.nfl_S7_container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* nfl sec seven end */
+
+.more-news-card img {
+  height: 162px;
+}
+
+/* ------------------------------------------- */
+/* nfl css end */
+
+.vertical_slider {
+  height: 600px;
+  background: #f5f5f5;
+}
+
+.vertical_slider .swiper-button-prev {
+  top: 4% !important;
+  left: 50% !important;
+  transform: rotate(90deg);
+}
+
+.vertical_slider .swiper-button-next {
+  top: auto !important;
+  bottom: 4% !important;
+  left: 50% !important;
+  transform: rotate(90deg);
+}
+
+.vertical_slider .swiper-button-prev:after {
+  color: #000 !important;
+}
+
+.vertical_slider .swiper-button-next:after {
+  color: #000 !important;
+}
+
+.v_s_div {
+  background: rgba(255, 255, 255, 0.81);
+  height: 96px;
+  position: absolute;
+  width: 100%;
+}
+
+.v_s_top {
+  top: 0;
+  left: 0;
+}
+
+.v_s_bottom {
+  bottom: 0;
+  left: 0;
+}
+
+.vertical_slider .swiper-wrapper {
+  z-index: -1 !important;
+}
+
+.vertical_slider .swiper-button-prev::after {
+  font-size: 30px !important;
+  font-weight: 900;
+}
+
+.vertical_slider .swiper-button-next::after {
+  font-size: 30px !important;
+  font-weight: 900;
+}
+
+.scoreSlider .swiper-button-prev {
+  background: #d9d9d9;
+  height: 124px;
+  top: 0;
+  left: 0;
+  width: 40px;
+}
+
+.scoreSlider {
+  max-width: 70vw !important;
+  background: #f5f5f5;
+  padding: 10px 0px !important;
+}
+
+.scoreSlider .swiper-button-next {
+  background: #d9d9d9;
+  height: 124px;
+  top: 0;
+  right: 0;
+  width: 40px;
+}
+
+.scoreSlider .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000 !important;
+}
+
+.scoreSlider .swiper-button-next::after {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000 !important;
+}
+
+.scoreSlider .swiper-slide {
+  border-left: 3px solid rgba(0, 0, 0, 0.17);
+  display: flex;
+  justify-content: center;
+}
+
+._smd_scoreSlider_n {
+  display: grid;
+  grid-template-columns: 143px 1fr;
+  align-items: center;
+}
+
+/* responsive start */
+@media only screen and (max-width: 1024px) {
+  .nfl_sec_one_overlay h3 {
+    font-size: 30px;
+  }
+
+  .nfl_sec_one_overlay p {
+    font-size: 15px;
+  }
+
+  .nfl_video_icon {
+    width: 50px;
+  }
+
+  .scoreSlider {
+    max-width: 65vw !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .nfl_sec_two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nfl_sec_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nfl_sec5_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nfl_sec2_vertical_line {
+    display: none;
+  }
+
+  .nfl_S6_card_main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+
+  ._smd_top_heading {
+    flex-direction: column;
+  }
+
+  ._smd_top_social {
+    border-right: 0px solid #fff !important;
+  }
+
+  ._smd_topHead_ul {
+    text-align: center;
+  }
+
+  ._smd_top_story_main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  ._smd_player_news_main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  ._smd_bf_grid_main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  ._smd_footer_menu {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .nfl_sec_one_img {
+    height: 260px;
+  }
+
+  .nfl_sec_two {
+    grid-template-columns: 1fr;
+  }
+
+  .nfl_sec_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nfl_sec5_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nfl_sec_one_overlay h3 {
+    font-size: 20px;
+  }
+
+  .nfl_sec_one_overlay p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .nfl_sec_two_middle {
+    flex-direction: column-reverse;
+  }
+
+  .nfl_S3__ul {
+    font-size: 15px;
+  }
+
+  .nfl_S3__ul li {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nfl_sec_one_img {
+    height: 260px;
+  }
+
+  .nfl_S6_card_main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+
+  .nfl_S7_container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  ._smd_top_story_main {
+    grid-template-columns: 1fr;
+  }
+
+  ._smd_player_news_main {
+    grid-template-columns: 1fr;
+  }
+
+  ._smd_bf_grid_main {
+    grid-template-columns: 1fr;
+  }
+
+  ._smd_top_heading ._smd_top_heading_section ul li a {
+    font-size: 12px !important;
+  }
+
+  ._smd_top_heading ._smd_top_heading_section ul li {
+    font-size: 12px !important;
+  }
+
+  ._smd_scoreSlider_dropdown {
+    width: 100% !important;
+  }
+
+  .palyer_news_card_img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .scoreSlider {
+    max-width: 88vw !important;
+  }
+
+  ._smd_nfl_scroe_card {
+    width: 100% !important;
+  }
+
+  .scoreSlider .swiper-button-next {
+    width: 18px;
+  }
+
+  .scoreSlider .swiper-button-prev {
+    width: 18px;
+  }
+
+  .scoreSlider .swiper-button-next::after {
+    font-size: 13px;
+  }
+
+  .scoreSlider .swiper-button-prev::after {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  ._smd_headers_article ._smd_article_card {
+    width: 100%;
+  }
+
+  .nfl_sec5_grid {
+    grid-gap: 30px;
+  }
+
+  ._smd_scoreSlider_n {
+    grid-template-columns: 1fr;
+  }
+
+  ._smd_nfl_scroe_card {
+    display: grid;
+    grid-template-columns: 1fr 84px;
+    width: 206px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    max-width: 100% !important;
+  }
+
+  ._smd_top_social li {
+    margin-right: 10px;
+  }
+
+  ._smd_nfl_scroe_card {
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    padding: 0px 22px;
+  }
+}
+
+/* responsive end */

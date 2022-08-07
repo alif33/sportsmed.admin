@@ -1,0 +1,1742 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#nba,
+#mlb,
+#nfl,
+#fullpage,
+#watch,
+#about,
+#disclaimer,
+#podcast,
+#login,
+#playPodCast {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000;
+}
+
+#fullpage {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: calc(100%);
+  position: relative;
+}
+
+#fullpage::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#fullpage .fullpage_box {
+  z-index: 100;
+}
+
+#fullpage .fullpage_box p {
+  line-height: 1.6;
+}
+
+.allepisodes {
+  width: max-content;
+  cursor: pointer;
+}
+
+.allepisodes i {
+  margin-top: 0.3rem;
+}
+
+.audiobox {
+  position: relative;
+}
+
+.porgresbar {
+  width: 80vw;
+  color: white;
+}
+
+.gold {
+  height: 44px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.controlBtn button {
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+}
+
+.controlBtn button:nth-child(3) svg {
+  width: 40px;
+}
+
+.controlBtn button svg {
+  width: 20px;
+  margin: 0 1rem;
+}
+
+.controlBtn button svg:hover {
+  transition: 0.2s linear;
+  color: #b0b0b0;
+}
+
+.prbBox button {
+  background: transparent;
+  color: white;
+  border: none;
+}
+
+@media screen and (max-width: 769px) {
+  .sliderBox {
+    flex-direction: column;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 1);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+  animation: load 0.3s linear alternate infinite;
+}
+
+@keyframes load {
+  0% {
+    color: aqua;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+#login {
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#login form {
+  background-color: #000;
+  min-width: 40%;
+  min-height: 50vh;
+  padding: 1.5rem 2rem;
+  margin-top: -5rem;
+  box-shadow: 0px 6px 10px 0.4px rgba(239, 239, 239, 0.4);
+  border-radius: 1rem;
+}
+
+#login form label {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+#login form input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 2px solid white;
+  outline: none;
+}
+
+#login form input:focus {
+  color: cyan;
+}
+
+#login form button {
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.6rem 2rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+.nabBtn button:focus {
+  outline: unset;
+  box-shadow: unset;
+}
+
+.hoverBtn {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: 0.3s linear;
+  border-radius: 10px;
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hoverBtn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.card {
+  transform: scale(0.9);
+  border-radius: 14px;
+}
+
+.card-body {
+  padding: 0 0 !important;
+  padding-top: 10px !important;
+}
+.card-footer {
+  padding: 0 0 !important;
+}
+
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#podcast {
+  border: 5px solid #fff;
+}
+
+.podcastBox {
+  cursor: pointer;
+}
+
+.podcastBox .podcastImage {
+  position: relative;
+}
+
+.podcastBox .podcastImage i {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  font-size: 2rem;
+  display: none;
+  transition: 0.2s linear;
+}
+
+.podcastBox .podcastImage img {
+  position: relative;
+  width: 200px;
+}
+
+.podcastBox:hover i {
+  display: block;
+  transition: 0.2s linear;
+}
+
+.podcastBox:hover img {
+  cursor: pointer;
+}
+
+.searchbar {
+  position: relative;
+  width: max-content;
+}
+
+.searchbar input:focus {
+  border: unset;
+  box-shadow: unset;
+  outline: unset;
+}
+
+#disclaimer {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+#disclaimer::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -111;
+}
+
+#disclaimer .infobox {
+  color: #fff;
+}
+
+.MenuIcon i {
+  font-size: 2.5rem;
+  color: white;
+  position: absolute;
+  top: 40%;
+  right: 2rem;
+  display: none;
+}
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.Navbar .nav {
+  margin-right: 3rem;
+  margin-left: -6em;
+}
+
+.Navbar .nav .navSearchBar {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.Navbar .nav .navSearchBar input {
+  background: black;
+  border-radius: 10px;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.Navbar .nav .navSearchBar button {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  background: black;
+  color: white;
+  border-radius: 0.3rem;
+}
+
+.Navbar .nav .navSearchBar button:focus {
+  background: white;
+  color: #000;
+}
+
+.mainBody {
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.mainBody::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -111;
+}
+
+.NavmainWrapper {
+  background-color: #000;
+  padding: 15px 0px;
+}
+
+.navbarWrapper {
+  display: flex;
+}
+
+.NavLogoWarpper {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.navlogoSocial-wrapper ul {
+  display: flex;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.navlogoSocial-wrapper ul li {
+  list-style: none;
+  padding-right: 15px;
+}
+
+.navlogoSocial-wrapper ul li a {
+  text-decoration: none;
+}
+
+.navlogoSocial-wrapper ul li a i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.navLogo a img {
+  height: 93px;
+  width: 93px;
+}
+
+.navlogoSocial-wrapper p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 425px) {
+  .navLogo img {
+    width: 55px;
+  }
+
+  .navlogoSocial-wrapper p {
+    font-size: 13px;
+  }
+}
+
+.navlogoSocial-wrapper {
+  padding-left: 10px;
+}
+
+.linkBox li {
+  padding: 6px 8px;
+}
+
+.linkBox li a {
+  color: #fff;
+}
+
+.linkBox li a:hover {
+  transition: 0.2s ease;
+  color: purple;
+}
+
+.navbarmemuWrapper {
+  width: 60%;
+}
+
+.menulist-profile-btn {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.Navar-loginButton {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navSearchbar .btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+
+.navSearchbar .btn-outline-success:hover {
+  background-color: transparent;
+}
+
+.navSearchbar input {
+  outline: unset;
+  border: unset;
+}
+
+.Navar-loginButton button {
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 6px 8px;
+}
+
+.Navar-loginButton button:nth-child(1) {
+  margin-right: 8px;
+}
+
+.BannerWrapper {
+  padding: 60px 0px;
+}
+
+.FooterWrapper {
+  margin-top: auto;
+  padding: 50px 0px;
+  background-color: #000;
+  text-align: center;
+}
+
+.FooterWrapper h1 {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.FooterWrapper p {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.FooterWrapper a {
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 15px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.FooterWrapper ul {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  margin: 10px 0px;
+}
+
+.FooterWrapper ul li {
+  list-style: none;
+  padding: 8px 10px;
+}
+
+.FooterWrapper ul li a {
+  text-decoration: none;
+}
+
+.FooterWrapper ul li a i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.DuplicateMenuList ul li {
+  padding: 11px 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-align: end;
+  font-weight: 500;
+  letter-spacing: 0.2;
+  background-color: #000;
+  margin: 10px 0px;
+  padding-right: 1rem;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 0.2s linear;
+}
+
+.DuplicateMenuList ul li:hover a {
+  color: #000;
+}
+
+.DuplicateMenuList ul li a {
+  /* text-transform: capitalize;
+	 */
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.SubcategoryWrapper ul li {
+  padding: 11px 15px;
+  width: max-content;
+  text-align: end;
+  background-color: #000;
+  margin: 10px 0px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.SubcategoryWrapper ul li:hover a {
+  color: #000 !important;
+}
+
+.SubcategoryWrapper ul li a {
+  color: #fff !important;
+}
+
+.SubcategoryWrapper {
+  position: relative;
+}
+
+.DuplicateMenuList ul li ul {
+  display: none;
+  padding-left: 10px;
+}
+
+/* .DuplicateMenuList ul li :hover ul{
+	 display: block;
+	 position: absolute;
+	 left: 100%;
+	 top: 0;
+}
+ */
+.SubcategoryWrapper:hover ul {
+  display: block;
+  position: absolute;
+  left: 100%;
+  bottom: 0%;
+  width: 100%;
+}
+
+.BannerMainLogo img {
+  max-width: 100%;
+}
+
+.BannerMainLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .navbarWrapper {
+    display: block;
+    position: relative;
+  }
+
+  .navbarmemuWrapper {
+    width: 100%;
+  }
+
+  .NavLogoWarpper {
+    width: 100%;
+  }
+
+  .Navar-loginButton {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .navmenuItem ul li {
+    padding: 10px 8px;
+  }
+
+  .Search-ItemListWrapper {
+    padding: 30px 0px;
+  }
+
+  .DuplicateMenuList {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .podcastBox {
+    flex-direction: column;
+  }
+
+  .navLogo a img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .MenuIcon i {
+    display: block;
+    cursor: pointer;
+  }
+
+  .MenuIcon i:active {
+    color: aqua;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .Navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000;
+    z-index: 99;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    transform-origin: top;
+    transition: 0.2s linear;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    display: none;
+  }
+
+  .Navbar ul {
+    flex-direction: column;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .Navbar ul .linkBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.container-50 {
+  width: 35%;
+  margin: 0 auto;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
+.c-white {
+  background-color: #fff !important;
+}
+
+.container-75 {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* ============================= PlayerCardBox ============================ */
+.PlayerCardBox img {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.PlayerCardBox .iconDelete {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.PlayerCardBox .iconDelete:hover {
+  color: #776bf0;
+  transition: 0.2s linear;
+}
+
+.PlayerCardBox .iconEdit {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #776bf0;
+}
+
+.PlayerCardBox .iconEdit:hover {
+  color: tomato;
+  transition: 0.2s linear;
+}
+
+.show-tag {
+  padding: 10px 15px;
+  border: 1px solid #776bf0;
+  border-radius: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.show-tag i {
+  padding-left: 10px;
+}
+
+.user_sidebar {
+  background-color: #000000d1;
+  padding: 0px 12px;
+}
+
+.user_sidebar .image_area {
+  width: 85px;
+  height: 85px;
+}
+
+.user_side {
+  margin-left: 12px;
+}
+
+.user_side .item_list {
+  background-color: #434242;
+  margin: 12px 0px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.user_side .item_list:hover {
+  background-color: #656464;
+  margin: 12px 0px;
+  border-radius: 5px;
+}
+
+.active_link {
+  background-color: #656464;
+  margin: 12px 0px;
+  border-radius: 5px;
+}
+
+.user_side .item_name {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popup-overlay {
+  background: rgb(42 42 42 / 50%) !important;
+}
+
+.popup-content {
+  height: 500px;
+  border: none !important;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111 !important;
+  box-shadow: 0px 4px 20px 10px rgb(87 128 255 / 12%);
+
+  @media (max-width: 992px) {
+    width: 60% !important;
+  }
+
+  @media (max-width: 768px) {
+    width: 80% !important;
+  }
+
+  @media (max-width: 580px) {
+    height: 390px;
+  }
+}
+
+.modal {
+  font-size: 12px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal > .modal-title {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  margin-left: 0;
+}
+
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  line-height: 20px;
+  right: 20px;
+  top: 12px;
+  font-size: 32px;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid;
+  color: #fff;
+  height: 35px;
+  width: 35px;
+}
+
+.login-form .form-group {
+  margin: 18px 0;
+}
+
+.login-form .form-group label {
+  width: 100%;
+  font-size: 16px;
+  margin: 5px 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.login-form .form-group input {
+  width: 100%;
+  padding: 5px 14px;
+  font-size: 18px;
+  border: 1px solid #776bf0;
+  border-radius: 5px;
+}
+
+.login-btn {
+  border: none;
+  background: linear-gradient(90deg, #25e2f5, #f5bf25);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 19px;
+  font-weight: 600;
+  width: 115px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.login-btn:hover {
+  background: linear-gradient(180deg, #25e2f5, #f5bf25);
+  color: #fff;
+  box-shadow: 0 0 3px 0px #fff;
+}
+
+.lig-item {
+  margin-bottom: 6px;
+}
+
+.lig-item span {
+  background: #25d366;
+  color: #fff;
+  font-size: 14px;
+}
+.lig-item p span {
+  color: #5e5873;
+  font-weight: 500;
+  padding: 0px 12px;
+  border-radius: 13px;
+}
+.team-item {
+  margin-bottom: 6px;
+}
+.team-item span {
+  background: #007fb1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 12px;
+  border-radius: 13px;
+}
+
+.admin-login {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login-form {
+  width: 35%;
+  background: #fff;
+  padding: 40px 80px;
+  border-radius: 20px;
+}
+
+.form-group {
+}
+/*==========================
+_smd_navbar
+===========================*/
+
+._smd_top_heading {
+  display: flex;
+  justify-content: space-between;
+}
+._smd_top_heading ._smd_top_heading_section {
+}
+._smd_top_heading ._smd_top_heading_section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+._smd_top_heading ._smd_top_heading_section ul li {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+._smd_top_heading ._smd_top_heading_section ul li a {
+  display: inline-block;
+  margin: 0 15px;
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 20px;
+}
+._smd_top_heading ._smd_top_heading_section ul li img {
+}
+
+._smd_border-right {
+  border-right: 2px solid #fff;
+}
+
+._smd_top_social {
+  width: 15%;
+}
+._smd_top_social ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+._smd_top_middle {
+  width: 60%;
+}
+._smd_top_reg {
+  width: 25%;
+}
+._smd_top_reg ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+._smd_top_reg ul li {
+  text-align: center;
+}
+
+._smd_top_reg ul li img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.bg-black {
+  background-color: #000000 !important;
+}
+
+._smd_navbar_border {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+._smd_navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+._smd_nav_item a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f5f5f5 !important;
+  margin: 0 16px;
+  height: 63px;
+  /* width: 90px; */
+  padding: 0 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 5px 0px 0px;
+  position: relative;
+}
+._smd_nav_item a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+._smd_nav_item.active a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+._smd_nav_item.active a {
+  background: #ffffff2b;
+}
+
+/*==========================
+_smd article
+===========================*/
+._smd_headers_article {
+}
+._smd_headers_article ._smd_article_card {
+  width: 25%;
+  position: relative;
+  height: 150px;
+  margin: 0 10px;
+}
+._smd_headers_article ._smd_article_card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+._smd_headers_article ._smd_article_card h4 {
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  color: #fff;
+  width: 73px;
+  height: 23.87px;
+  background: #cb3939;
+  border-radius: 3px;
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 23.87px;
+}
+/*=================
+_smd_scoreSlider
+===================*/
+._smd_scoreSlider {
+  display: flex;
+}
+._smd_scoreSlider_date {
+  width: 10%;
+}
+._smd_scoreSlider_date h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: -0.04em;
+  color: #131313;
+}
+._smd_scoreSlider_date p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: -0.04em;
+  color: #131313;
+}
+._smd_scoreSlider_section {
+  height: 56px;
+  width: 90%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+._smd_scoreSlider_dropdown {
+  height: 100%;
+  width: 10%;
+}
+._smd_scoreSlider_dropdown_btn {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  height: 100%;
+  border-right: 3px solid rgba(0, 0, 0, 0.17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._smd_newCard {
+}
+._smd_newCard h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: #121212;
+  position: relative;
+  margin-bottom: 70px;
+}
+._smd_newCard h2::after {
+  position: absolute;
+  content: "";
+  width: 205px;
+  height: 5px;
+  top: 140%;
+  left: 0%;
+  background: #121212;
+}
+._smd_newCard a {
+}
+._smd_newCard a img {
+  width: 590px;
+}
+._smd_newCard a h3 {
+  ont-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 42px;
+  color: #121212;
+}
+._smd_newCard a p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 42px;
+  color: #5c5656;
+}
+
+/*===========
+_smd_footer
+======== */
+._smd_footer {
+  color: #fff;
+}
+
+._smd_footer_follow_menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+._smd_footer_follow_menu li {
+  display: inline-block;
+}
+._smd_footer_follow_menu li a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 17px;
+  color: #ffffff !important;
+}
+._smd_footer_follow_menu li a img {
+}
+._smd_news_alerts {
+  width: 68%;
+  margin: auto;
+}
+._smd_news_alerts h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 17px;
+  color: #ffffff;
+}
+._smd_news_alerts button {
+  background: #d70404;
+  border-radius: 4px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 17px;
+  color: #ffffff;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 9px;
+}
+._smd_footer_menu {
+  list-style: none;
+}
+._smd_footer_menu li {
+  margin-bottom: 28px !important;
+}
+._smd_footer_menu li a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  color: #747474;
+  margin-bottom: 14px;
+  display: block;
+}
+
+._smd_footer_nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+.copy-right a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #747474;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-btn {
+}
+.dropdown:hover .dropdown-items {
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown-items {
+  position: absolute;
+  background: #fff;
+  color: #111;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dropdown-items li {
+  color: #111 !important;
+  display: block;
+}
+
+/*=========================
+_smd_nbahero
+===========================*/
+
+._smd_nbahero {
+  background: #111;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 37% 37% 26%;
+}
+._smd_nbahero_card {
+  position: relative;
+}
+._smd_nbahero_card h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.541);
+  color: #fff;
+  margin: 0;
+  padding: 10px 0;
+}
+._smd_nbanav_news {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  height: 418px;
+}
+
+._smd_nbanews_list {
+  padding: 15px 10px 10px 15px;
+}
+._smd_nbanews_list ul {
+}
+._smd_nbanews_list ul li {
+}
+._smd_nbanews_list ul li h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.18px;
+  color: #ffffff;
+}
+._smd_nbanews_list ul li p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.18px;
+  color: #5c5656;
+}
+
+._smd_live_watch_bg {
+  width: 100%;
+  height: 339px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+._smd_live_watch_bg ._smd_live_btn {
+  position: absolute;
+  top: 8%;
+  left: 3%;
+}
+._smd_live_btn {
+  width: 128px;
+  height: 42.13px;
+  background: #d70404;
+  border-radius: 3px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 39px;
+  color: #ffffff;
+  border: none;
+}
+.nfl_card_title2 ._smd_live_btn {
+  font-size: 21px;
+  line-height: 32px;
+  height: 32px;
+  margin-left: 30px;
+}
+._smd_watch_live_title {
+  margin-bottom: 20px;
+}
+
+._smd_live_video_tilte {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #111111ba;
+  color: #fff !important;
+  padding: 18px 15px;
+  padding-right: 34px;
+  display: grid;
+  grid-template-columns: 6% 94%;
+  align-items: center;
+}
+._smd_live_video_tilte img {
+}
+._smd_live_video_tilte h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 37px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+._smd_watch_system {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+}
+._smd_watch_system p {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 14px;
+  text-align: center;
+  color: #c2c4c7;
+  margin: 0;
+}
+._smd_watch_system ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+._smd_watch_system ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+._smd_card_title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 22px;
+  color: #202121;
+}
+._smd_card_desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #121212;
+}
+
+._smd_login_card {
+  /* background: rgba(0, 0, 0, 0.432); */
+  width: 35%;
+  margin: auto;
+  margin-top: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+._smd_login_card h3 {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 61px;
+  color: #121212;
+}
+._smd_login_card button {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 28px;
+  color: #121212;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 15px 0;
+}
+._smd_login_card button div {
+  width: 100%;
+}
+._smd_or_line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+._smd_or_line div {
+  background: #5c5656;
+  width: 45%;
+  height: 1px;
+}
+._smd_or_line p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 28px;
+  color: #5c5656;
+  width: 10%;
+  padding: 0;
+  margin: 0;
+}
+
+._smd_login_card .bg-black {
+  color: #fff;
+}
+._smd_form_group {
+  width: 100%;
+}
+._smd_form_group label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  color: #121212;
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+}
+._smd_form_group input {
+  height: 55px;
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  color: rgba(92, 86, 86, 0.32);
+  padding: 0px 25px;
+}
+
+._smd_login_card a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #121212;
+}
+a {
+  color: #6e6b7b !important;
+}
+
+/*======================
+PodcastPage
+=======================*/
+
+.podcast-header {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+.podcast-header img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.podcast-header h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 30px;
+  background: rgba(18, 18, 18, 0.71);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 57px;
+  color: #ffffff;
+  width: 100%;
+  margin: 0;
+}
+
+.featured-text {
+  padding-left: 40px;
+}
+.featured-text h4 {
+  background: #121212;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0 14px;
+}
+.featured-text h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 47px;
+  letter-spacing: 0.2px;
+  color: #121212;
+}
+.featured-text p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  color: #5c5656;
+}
+.featured-text h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 47px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  background: #121212;
+  display: inline-block;
+  padding: 10px 35px;
+  margin-top: 10px;
+}
+
+/*======================
+podcast-card
+=======================*/
+.podcast-card {
+  border: 1px solid #d9dbde;
+  padding: 20px;
+}
+.podcast-card img {
+  width: 100%;
+}
+.podcast-card span {
+  background: #000000;
+  border-radius: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 11px;
+  color: #ffffff;
+  margin: 26px 0;
+  display: inline-block;
+  padding: 10px 7px;
+}
+.podcast-card h4 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+  /* or 147% */
+
+  color: #121212;
+}
+.podcast-card a {
+  border: 1px solid #d9dbde;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 47px;
+  letter-spacing: 0.2px;
+  color: #121212 !important;
+  display: block;
+  width: 100%;
+  padding: 9px 0;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 35px;
+}
+
+/*======================
+End podcast-card
+=======================*/
+
+.forget-password-desc {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  color: #121212;
+}
+.forget-password-desc a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #121212 !important;
+}
+/*======================
+End PodcastPage
+=======================*/
