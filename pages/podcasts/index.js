@@ -72,10 +72,10 @@ export default function Home() {
           <div className="col-md-12">
             <div className="c-white p-2">
               <div className="card-body">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={ handleSubmit(onSubmit) }>
                   <div className="row">
                     <div className="col-sm-12">
-                      <h6 className="text-center mb-2">Insert Podcasts</h6>
+                      <h3 className="text-center mb-2">Insert Podcasts</h3>
                       <div className="row">
                         {/* title and audio link */}
                         <div className="col-sm-12 col-md-6">
@@ -125,10 +125,7 @@ export default function Home() {
                             />
                           </div>
                         </div>
-                        {/* title and audio link en */}
-
-                        {/* input description start */}
-
+                        
                         <div className="col-sm-12">
                           <div className=" mb-1 input-group">
                             <textarea

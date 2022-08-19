@@ -16,7 +16,7 @@ import {
 import { adminAuth } from "../__lib__/helpers/requireAuthentication";
 
 
-export default function Home() {
+export default function Videos() {
   const [disable, setDisable] = useState(false);
   const [loading, setLoading] = useState(true);
   const [videos, setVideos] = useState([]);
@@ -79,7 +79,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit(onSubmit, onError)}>
                   <div className="row">
                     <div className="col-sm-12">
-                      <h6 className="text-center mb-2">Insert Video</h6>
+                      <h3 className="text-center mb-2">Insert Video</h3>
                       <div className="row">
                         <div className="col-md-6 col-12">
                           <div className="input-group-merge mb-1 input-group">
@@ -202,7 +202,6 @@ export default function Home() {
 
                                 width='100%'
                                 height='100%'
-
                                 controls={true}
                                 url={`https://www.youtube.com/watch?v=${item.videoId}`} />
 

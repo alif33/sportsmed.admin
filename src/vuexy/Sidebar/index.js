@@ -65,8 +65,8 @@ export default function Sidebar({ toggle, setToggle }) {
       <div className="shadow-bottom" />
       <div className="main-menu-content">
         <ul className="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li className={`${router.pathname === '/dashboard' && 'active'} nav-item`}>
-            <Link href="/dashboard">
+          <li className={`${router.pathname === '/' && 'active'} nav-item`}>
+            <Link href="/">
               <a className="d-flex align-items-center" > <Home /> <span className="menu-title text-truncate" data-i18n="Home">Home</span></a>
             </Link>
           </li>
@@ -93,11 +93,11 @@ export default function Sidebar({ toggle, setToggle }) {
             </Link>
           </li>
 
-          <li className={`${router.pathname === '/watches' && 'active'} nav-item`}>
-            <Link href="/watches">
+          <li className={`${router.pathname === '/videos' && 'active'} nav-item`}>
+            <Link href="/videos">
               <a className="d-flex align-items-center" >
                 <TagIcon color={router.pathname === '/watches' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Watches</span></a>
+                <span className="menu-title text-truncate" data-i18n="Home">Videos</span></a>
             </Link>
           </li>
 

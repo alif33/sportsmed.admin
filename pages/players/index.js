@@ -67,7 +67,7 @@ console.log(players)
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="row">
                     <div className="col-sm-12">
-                      <h6 className="text-center mb-2">Add Player</h6>
+                      <h3 className="text-center mb-2">Add Player</h3>
                       <div className="row">
                         <div className="col-md-6">
                           <div className="input-group-merge mb-1 input-group">
