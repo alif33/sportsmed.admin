@@ -13,7 +13,7 @@ export default function Home() {
               <div className="breadcrumb-wrapper">
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link href="/admin/dashboard">
+                    <Link href="/">
                       <a>Home</a>
                     </Link>
                   </li>

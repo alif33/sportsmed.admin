@@ -110,7 +110,7 @@ const Navbar = () => {
               <div className="col-md-4 ">
                 {_info?.token ? (
                   <div className="d-flex align-items-center nabBtn">
-                    <Link href="/user/dashboard">
+                    <Link href="/">
                       <button
                         type="button"
                         className="btn btn-outline-secondary me-2"

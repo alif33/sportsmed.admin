@@ -22,7 +22,7 @@ export default function Sidebar({ toggle, setToggle }) {
     <div className="main-menu menu-fixed menu-light menu-accordion menu-shadow">
       <div className="navbar-header">
         <ul className="nav navbar-nav flex-row">
-          <li className="nav-item me-auto"><Link href="/dashboard"><a className="navbar-brand"><span className="brand-logo">
+          <li className="nav-item me-auto"><Link href="/"><a className="navbar-brand"><span className="brand-logo">
             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height={24}>
               <defs>
                 <linearGradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
