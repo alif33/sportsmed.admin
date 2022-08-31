@@ -17,7 +17,9 @@ const podcastSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        
+        playersName: {
+            type: Array,
+        }
     },
     { timestamps: true }
 );

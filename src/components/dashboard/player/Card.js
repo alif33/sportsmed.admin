@@ -67,7 +67,7 @@ export default function Card({ index, item, setPlayers }) {
                 {/* edit player */}
                 <a
                 className="text-primary"
-                  onClick={() => router.push(`/admin/players/edit/${item._id}`)}
+                  onClick={() => router.push(`/players/edit/${item._id}`)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

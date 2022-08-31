@@ -17,6 +17,9 @@ const watchSchema = new mongoose.Schema(
             enum : ['NFL', 'NBA', 'MLB'],
             require: true
         },
+        playersName: {
+            type: Array
+        },
         description: {
             type: String,
             required: true,

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { FiEdit } from "react-icons/fi";
-import { MdDelete } from "react-icons/md";
 import { adminAuthStatus } from "../../../../__lib__/helpers/Cookiehandler";
 import { deleteData, getData } from "../../../../__lib__/helpers/HttpService";
 import { useRouter } from "next/router";
@@ -71,7 +69,7 @@ export default function Card({ index, item, fetchPosts }) {
                 {/* edit player */}
                 <a
                   className="text-primary"
-                  onClick={() => router.push(`/admin/posts/edit/${item._id}`)}
+                  onClick={() => router.push(`/posts/edit/${item._id}`)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -9,6 +9,7 @@ import { adminAuthStatus } from "../../../__lib__/helpers/Cookiehandler";
 import { getData, updateData } from "../../../__lib__/helpers/HttpService";
 import { adminAuth } from "../../../__lib__/helpers/requireAuthentication";
 
+
 export default function Players() {
   const [loading, setLoading] = useState(true);
   const [post, setPost] = useState(null);
@@ -54,7 +55,7 @@ export default function Players() {
           fetctPost(router.query.postId);
           toast.success(`${res.message}`);
           setDisable(false);
-        router.push('/admin/posts')          
+        router.push('/posts')          
         } else {
           toast.error(res.error);
           setDisable(false);

@@ -40,10 +40,19 @@ export default function Videos() {
     });
   };
 
+
+  function youtube_parser(url){
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    let match = url.match(regExp);
+    return (match && match[7].length==11)? match[7] : false;
+  }
+
+
   const onSubmit = async (data) => {
+
     const { token } = await adminAuthStatus();
     setDisable(true);
-    authPost("/admin/watch", data, token).then((res) => {
+    authPost("/admin/watch", {...data, videoId: youtube_parser(data.videoUri)}, token).then((res) => {
       if (res?.success) {
         toast.success(`${res.message}`);
         setDisable(false);
@@ -132,13 +141,13 @@ export default function Videos() {
                           </svg>
                         </span>
                         <input
-                          {...register("videoId", {
-                            required: "ID is required.",
+                          {...register("videoUri", {
+                            required: "Video URI is required.",
                           })}
                           id="nameVerticalIcons"
-                          placeholder="YouTube video ID"
                           type="text"
                           className="form-control"
+                          placeholder="YouTube Video Uri"
                         />
                       </div>
                       <div className="input-group-merge mb-1 input-group">

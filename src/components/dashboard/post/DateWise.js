@@ -19,9 +19,6 @@ const DateWise = ({ fetchPosts, posts }) => {
                             <h5 className="mb-0" >{dateformat(item._id, 'dd mmmm yyyy')}</h5>
 
                             <hr />
-                            {/* <h5 >
-                                { (postOpen ===  index ) ? <ChevronUp onClick={() => setPostOpen(postOpen === index ? '': index)} /> : <ChevronDown onClick={() => setPostOpen(postOpen === index ? '': index)}/>}
-                            </h5> */}
                             
                             <h5 >
                                 {(postOpen === index) ? <ChevronUp onClick={() => setPostOpen(postOpen === index ? '' : index)} /> : 
