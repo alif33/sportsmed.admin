@@ -34,7 +34,9 @@ export default function Players() {
 
   const InsertPlayer = async (data) => {
     setDisable(true);
-    postData("/admin/player", data, setDisable).then((res) => {
+    postData("/admin/player", data, setDisable)
+    .then((res) => {
+      setDisable(false);
       if (res?.success) {
         fetctPlayer();
         toast.success(`${res.message}`);

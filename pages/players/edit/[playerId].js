@@ -41,7 +41,7 @@ export default function SinglePlayer() {
         fetctPlayer(router.query.playerId);
         toast.success(`${res.message}`);
         setDisable(false);
-        router.push('/admin/players')
+        router.push('/players')
       } else {
         toast.error(res.error)
         setDisable(false);
