@@ -18,6 +18,7 @@ export default function Sidebar({ toggle, setToggle }) {
 
     }
   };
+  
   return (
     <div className="main-menu menu-fixed menu-light menu-accordion menu-shadow">
       <div className="navbar-header">
