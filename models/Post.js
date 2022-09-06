@@ -1,5 +1,23 @@
 import mongoose from 'mongoose';
 
+
+const commentSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        comment: {
+            type: String,
+            required: true,
+            trim: true
+        }
+    },
+
+    { timestamps: true }
+);
+
+
 const postSchema = new mongoose.Schema(
     {
         title: {
@@ -39,9 +57,11 @@ const postSchema = new mongoose.Schema(
             type: Array,
             required: true
         },
+        _comments: [commentSchema],
         comments: {
-            type: Array
-        }
+            type: Number,
+            default: 0
+        },
     },
     { timestamps: true }
 );

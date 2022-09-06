@@ -61,8 +61,7 @@ export default function SinglePlayer() {
     await InsertPlayer(formData);
   };
 
-
-
+  
   return (
     <Layout>
       <div className="content-body">
