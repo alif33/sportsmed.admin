@@ -12,6 +12,9 @@ const playerSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
+        slug: {
+            type: String
+        },
         playerTeam: {
             type: String,
             required: true,

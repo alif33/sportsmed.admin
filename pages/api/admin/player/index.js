@@ -46,6 +46,7 @@ handler.use(upload.single('image')).post(async (req, res) => {
         const player = new Player({
             firstName, 
             lastName, 
+            slug: firstName + "-" + lastName,
             description,
             playerTeam,
             league,
