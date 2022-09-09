@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Home } from 'react-feather';
-import { LogoutIcon, Man, PodcastIcon, PostIcon, TagIcon } from '../../components/Icon';
+import { LogoutIcon, Man, PodcastIcon, PostIcon, TagIcon, Team } from '../../components/Icon';
 import Cookies from 'universal-cookie';
 import { Disc, X } from "react-feather";
 
@@ -77,6 +77,14 @@ export default function Sidebar({ toggle, setToggle }) {
               <a className="d-flex align-items-center" >
                 <Man color={router.pathname === '/players' ? '#fff' : '#00000'} />
                 <span className="menu-title text-truncate" data-i18n="Home">Players</span></a>
+            </Link>
+          </li>
+
+          <li className={`${router.pathname === '/teams' && 'active'} nav-item`}>
+            <Link href="/teams">
+              <a className="d-flex align-items-center" >
+                <Team color={router.pathname === '/teams' ? '#fff' : '#00000'} />
+                <span className="menu-title text-truncate" data-i18n="Home">Teams</span></a>
             </Link>
           </li>
 
