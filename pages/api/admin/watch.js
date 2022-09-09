@@ -2,6 +2,7 @@ import nc from "next-connect";
 import Watch from "../../../models/Watch";
 import { isAdmin, isAuth } from "../../../utils/auth";
 import db from "../../../utils/db";
+import slugify from "slugify";
 
 const handler = nc();
 
@@ -14,6 +15,7 @@ handler.use(isAdmin).post(async (req, res) => {
 
   const watch = new Watch({
     title,
+    slug: slugify(title, "-"),
     league,
     videoId,
     description,
