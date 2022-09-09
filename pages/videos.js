@@ -243,7 +243,7 @@ export default function Videos() {
               </div>
             )}
 
-            {!loading && videos.length === 0 && <div className="text-center">Not availabel</div>}
+            {!loading && videos.length === 0 && <div className="text-center">No data found!</div>}
           </div>
         </div>
       </div>

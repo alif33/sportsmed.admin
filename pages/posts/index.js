@@ -265,7 +265,7 @@ export default function Posts() {
             {!loading && posts.length > 0 && <DateWise fetchPosts={fetchPosts} loading={loading} posts={posts} />}
 
 
-            {!loading && posts.length === 0 && <div> Not availabel</div>}
+            {!loading && posts.length === 0 && <div>No data found!</div>}
 
 
           </div>

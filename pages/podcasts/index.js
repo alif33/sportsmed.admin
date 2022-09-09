@@ -253,7 +253,7 @@ export default function Home() {
                 ))}
               </tbody>
             </table>}
-            {podcasts.length === 0 && !loading && <div className="text-center">Not availabel</div>}
+            {podcasts.length === 0 && !loading && <div className="text-center">No data found!</div>}
 
           </div>
         </div>
