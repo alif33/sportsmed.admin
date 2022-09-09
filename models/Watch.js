@@ -12,6 +12,9 @@ const watchSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
+        slug: {
+            type: String
+        },
         league: {
             type: String,
             enum : ['NFL', 'NBA', 'MLB'],
@@ -24,6 +27,10 @@ const watchSchema = new mongoose.Schema(
             type: String,
             required: true,
             trim: true
+        },
+        views: {
+            type: Number,
+            default: 0
         }
     },
     { timestamps: true }
