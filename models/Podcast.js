@@ -7,6 +7,11 @@ const podcastSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
+        slug: {
+            type: String,
+            required: true,
+            trim: true
+        },
         description: {
             type: String,
             required: true,
@@ -16,6 +21,10 @@ const podcastSchema = new mongoose.Schema(
             type: String,
             required: true,
             trim: true
+        },
+        image: {
+            type: String,
+            required: true
         },
         playersName: {
             type: Array,

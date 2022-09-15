@@ -7,6 +7,7 @@ import { Title } from "../../src/components/Icon";
 import Layout from "../../src/vuexy/Layout";
 import { adminAuthStatus } from "../../__lib__/helpers/Cookiehandler";
 import {
+  authPost,
   deleteData,
   getData,
   postData,
@@ -39,11 +40,18 @@ export default function Home() {
   };
 
 
-  const onSubmit = (data) => {
+  const onSubmit = async(data) => {
     setDisable(true);
-    postData("/admin/podcast", data, setDisable).then((res) => {
+    const { token } = await adminAuthStatus();
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("audioUri", data.audioUri);
+    formData.append("description", data.description);
+    formData.append("image", data.image[0]);
+
+    authPost("/admin/podcast", formData, token).then((res) => {
       if (res?.success) {
-        getData("podcasts").then((res) => setPodcasts(res));
+        getData("/podcasts").then((res) => setPodcasts(res));
         toast.success(`${res.message}`);
         reset();
         setDisable(false);
@@ -137,6 +145,21 @@ export default function Home() {
                               type="text"
                               className="form-control"
                             />
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className="input-group-merge mb-1 input-group pr-1">
+                              <input
+                                {...register("image", {
+                                  required: "Image is required.",
+                                })}
+                                id="fileManager"
+                                type="file"
+                                accept=".png, .jpg"
+                                className="form-control"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>

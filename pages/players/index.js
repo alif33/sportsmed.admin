@@ -155,9 +155,6 @@ console.log(players)
                         </div>
                         <div className="col-md-6">
                           <div className="input-group-merge mb-1 input-group pr-1">
-                            {/* <label htmlFor="fileManager" className="mb-2">
-                            Player Image
-                          </label> */}
                             <input
                               {...register("image", {
                                 required: "Image is required.",
