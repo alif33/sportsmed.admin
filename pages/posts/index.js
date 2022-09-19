@@ -21,6 +21,7 @@ export default function Posts() {
   const [selectedTag, setSelectedTag] = useState([])
   const [tags, setTags] = useState([]);
   const [players, setPlayers] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
 
@@ -35,10 +36,13 @@ export default function Posts() {
   useEffect(() => {
     fetchPosts()
     getData('/tags')
-      .then(res => setTags(res))
+      .then(res => setTags(res));
 
     getData('/admin/players')
-      .then(res => setPlayers(res))
+      .then(res => setPlayers(res));
+
+    getData('/authors')
+      .then(res => setAuthors(res));
 
   }, []);
 
@@ -75,6 +79,7 @@ export default function Posts() {
     formData.append("title", data.title);
     formData.append("league", data.league);
     formData.append("description", data.description);
+    formData.append("_author", data._author);
     formData.append("image", data.image[0]);
 
     for (let i = 0; i < selectedPlayers.length; i++) {
@@ -214,8 +219,34 @@ export default function Posts() {
                             ></textarea>
                           </div>
                         </div>
+                        {/* Author */}
+                        <div className="col-md-6">
+                          <div className="input-group-merge mb-1 input-group" style={{ flexWrap: 'nowrap' }}>
+                            <span className="input-group-text">
+                              <League />
+                            </span>
+                            <select
+                              {...register("_author", {
+                                required: "Author is required",
+                              })}
+                              className="form-select"
+                            >
+                              <option value="">Select</option>
+                              {
+                                authors && authors.map((item, index)=>{
+                                  	return(
+                                      <option
+                                        key={ index } 
+                                        value={ item.name }>{ item.name }</option>
+                                    )
+                                })
+                              }
+                            </select>
+                          </div>
+                        </div>
+
                         {/* image */}
-                        <div className="col-md-4">
+                        <div className="col-md-6">
                           <div className="input-group-merge mb-1 input-group pr-1">
                             <input
                               {...register("image", {

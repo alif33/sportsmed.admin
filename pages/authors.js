@@ -20,10 +20,10 @@ export default function Authors() {
     const router = useRouter();
 
     useEffect(()=>{
-        fetctAuthors();
+        getAuthors();
     }, [])
 
-    const fetctAuthors = () =>{
+    const getAuthors = () =>{
         getData(`/authors`)
             .then(data=>{
                 if(data){
@@ -41,7 +41,7 @@ export default function Authors() {
             if(res?.success)
             {  
                 toast.success(res.message);
-                fetctTags();
+                getAuthors();
                 reset();
                 setDisable(false)
             }
@@ -50,11 +50,11 @@ export default function Authors() {
 
     const handleDelete = async _id =>{
         const { token} = await adminAuthStatus(); 
-        deleteData(`/admin/tag?_id=${_id}`, token)
+        deleteData(`/admin/author?_id=${_id}`, token)
         .then(res=>{
            if(res?.success){
             toast.success(res.message);
-            fetctTags();
+            getAuthors();
            }else{
             toast.error(res.error);
            }
@@ -112,14 +112,14 @@ export default function Authors() {
                         </div>
                     </div>
 
-                    <h3 className="my-4">Tags</h3>
+                    <h3 className="my-4">Authors</h3>
                     
                     {
                         !loading && <table className="table">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Tag Name</th>
+                            <th scope="col">Author Name</th>
                             <th scope="col" className="text-center">Action</th>
                             </tr>
                         </thead>
@@ -129,7 +129,7 @@ export default function Authors() {
                                 return(
                                     <tr key={index}>
                                         <th scope="row">{++index}</th>
-                                        <td>{item.tagName}</td>
+                                        <td>{item.name}</td>
                                         <td className="text-center text-danger">
                                             <Delete
                                                 handleDelete={ handleDelete }

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const authorSchema = new mongoose.Schema(
     {
-        tagName: {
+        name: {
             type: String,
             required: true,
             trim: true

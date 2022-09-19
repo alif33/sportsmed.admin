@@ -1,8 +1,8 @@
-export function Man(){
+export function Man({ color }){
  
   return (
     <svg version={1.0} xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill={ color? color: "#000000" } stroke="none">
             <path d="M2335 5105 c-273 -42 -517 -172 -708 -375 -210 -223 -319 -481 -334
         -790 -21 -432 191 -845 557 -1084 180 -118 353 -178 563 -195 389 -30 721 92
         989 365 213 216 321 452 347 753 36 402 -116 776 -419 1038 -196 168 -376 252
@@ -19,11 +19,11 @@ export function Man(){
 };
 
 
-export function Team(){
+export function Team({ color }){
  
   return (
     <svg version={1.0} xmlns="http://www.w3.org/2000/svg" width={25} height={25} viewBox="0 0 980.000000 688.000000" preserveAspectRatio="xMidYMid meet">
-        <g transform="translate(0.000000,688.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+        <g transform="translate(0.000000,688.000000) scale(0.100000,-0.100000)" fill={ color? color: "#000000" } stroke="none">
                     <path d="M4655 6864 c-563 -85 -1000 -393 -1244 -880 -222 -444 -223 -981 -1
             -1424 126 -251 310 -463 532 -613 43 -29 77 -54 78 -57 0 -3 -44 -20 -97 -39
             -132 -47 -407 -185 -531 -268 -641 -429 -1060 -1081 -1178 -1833 -13 -84 -18

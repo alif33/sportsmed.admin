@@ -41,7 +41,9 @@ const postSchema = new mongoose.Schema(
             trim: true
         },
         _author: {
-
+            type: String,
+            required: true,
+            trim: true
         },
         league: {
             type: String,

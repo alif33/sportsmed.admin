@@ -68,7 +68,9 @@ export default function Sidebar({ toggle, setToggle }) {
         <ul className="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <li className={`${router.pathname === '/' && 'active'} nav-item`}>
             <Link href="/">
-              <a className="d-flex align-items-center" > <Home /> <span className="menu-title text-truncate" data-i18n="Home">Home</span></a>
+              <a className="d-flex align-items-center" > <Home color={router.pathname === '/'? "#fff": "#000" } /> 
+                	<span className={`menu-title ${router.pathname === '/'? "text-white": "text-truncate"}`} data-i18n="Home">Home</span>
+              </a>
             </Link>
           </li>
 
@@ -76,7 +78,7 @@ export default function Sidebar({ toggle, setToggle }) {
             <Link href="/authors">
               <a className="d-flex align-items-center" >
                 <Man color={router.pathname === '/authors' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Authors</span></a>
+                <span className={`menu-title ${router.pathname === '/authors'? "text-white": "text-truncate"}`} data-i18n="Home">Authors</span></a>
             </Link>
           </li>
 
@@ -84,7 +86,7 @@ export default function Sidebar({ toggle, setToggle }) {
             <Link href="/players">
               <a className="d-flex align-items-center" >
                 <Man color={router.pathname === '/players' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Players</span></a>
+                <span className={`menu-title ${router.pathname === '/players'? "text-white": "text-truncate"}`} data-i18n="Home">Players</span></a>
             </Link>
           </li>
 
@@ -92,7 +94,7 @@ export default function Sidebar({ toggle, setToggle }) {
             <Link href="/teams">
               <a className="d-flex align-items-center" >
                 <Team color={router.pathname === '/teams' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Teams</span></a>
+                <span className={`menu-title ${router.pathname === '/teams'? "text-white": "text-truncate"}`} data-i18n="Home">Teams</span></a>
             </Link>
           </li>
 
@@ -100,28 +102,32 @@ export default function Sidebar({ toggle, setToggle }) {
             <Link href="/tags">
               <a className="d-flex align-items-center" >
                 <TagIcon color={router.pathname === '/tags' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Post Tags</span></a>
+                <span className={`menu-title ${router.pathname === '/tags'? "text-white": "text-truncate"}`} data-i18n="Home">Post Tags</span></a>
             </Link>
           </li>
 
           <li className={`${router.pathname === '/posts' && 'active'} nav-item`}>
             <Link href="/posts">
-              <a className="d-flex align-items-center" > <PostIcon color={router.pathname === '/posts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Posts</span></a>
+              <a className="d-flex align-items-center" > <PostIcon color={router.pathname === '/posts' ? '#fff' : '#00000'} /> 
+                <span className={`menu-title ${router.pathname === '/posts'? "text-white": "text-truncate"}`} data-i18n="Home">Posts</span>
+              </a>
             </Link>
           </li>
 
           <li className={`${router.pathname === '/videos' && 'active'} nav-item`}>
             <Link href="/videos">
               <a className="d-flex align-items-center" >
-                <TagIcon color={router.pathname === '/watches' ? '#fff' : '#00000'} />
-                <span className="menu-title text-truncate" data-i18n="Home">Videos</span></a>
+                <TagIcon color={router.pathname === '/videos' ? '#fff' : '#00000'} />
+                <span className={`menu-title ${router.pathname === '/videos'? "text-white": "text-truncate"}`} data-i18n="Home">Videos</span></a>
             </Link>
           </li>
 
           <li className={`${router.pathname === '/podcasts' && 'active'} nav-item`}>
             <Link href="/podcasts">
               <a className="d-flex align-items-center" >
-                <PodcastIcon color={router.pathname === '/podcasts' ? '#fff' : '#00000'} /> <span className="menu-title text-truncate" data-i18n="Home">Podcasts</span></a>
+                <PodcastIcon color={router.pathname === '/podcasts' ? '#fff' : '#00000'} /> 
+                <span className={`menu-title ${router.pathname === '/podcasts'? "text-white": "text-truncate"}`} data-i18n="Home">Podcasts</span>
+              </a>
             </Link>
           </li>
 

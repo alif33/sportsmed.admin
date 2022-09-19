@@ -23,7 +23,7 @@ const handler = nc();
 const upload = multer();
 
 handler.use(isAdmin, upload.single("image")).post(async (req, res) => {
-  const { title, league, playersName, description, tags } = req.body;
+  const { title, league, playersName, _author, description, tags } = req.body;
   try {
     const streamUpload = (req) => {
       return new Promise((resolve, reject) => {
@@ -42,13 +42,14 @@ handler.use(isAdmin, upload.single("image")).post(async (req, res) => {
     if (url) {
       await db.connect();
       const post = new Post({
-        title: title,
+        title,
         slug: slugify(title, "-"),
-        description: description,
-        league: league,
+        description,
+        league,
         image: url,
-        playersName: playersName,
-        tags: tags,
+        _author,
+        playersName,
+        tags
       });
 
       if (await post.save()) {
