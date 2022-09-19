@@ -72,6 +72,14 @@ export default function Sidebar({ toggle, setToggle }) {
             </Link>
           </li>
 
+          <li className={`${router.pathname === '/authors' && 'active'} nav-item`}>
+            <Link href="/authors">
+              <a className="d-flex align-items-center" >
+                <Man color={router.pathname === '/authors' ? '#fff' : '#00000'} />
+                <span className="menu-title text-truncate" data-i18n="Home">Authors</span></a>
+            </Link>
+          </li>
+
           <li className={`${router.pathname === '/players' && 'active'} nav-item`}>
             <Link href="/players">
               <a className="d-flex align-items-center" >
