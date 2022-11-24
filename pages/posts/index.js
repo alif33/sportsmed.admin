@@ -38,7 +38,7 @@ export default function Posts() {
     getData('/tags')
       .then(res => setTags(res));
 
-    getData('/admin/players')
+    getData('/players')
       .then(res => setPlayers(res));
 
     getData('/authors')
@@ -47,7 +47,7 @@ export default function Posts() {
   }, []);
 
   const fetchPosts = () => {
-    getData("/admin/posts").then((data) => {
+    getData("/posts").then((data) => {
       if (data) {
         setPosts(data);
         setLoading(false);
@@ -114,7 +114,6 @@ export default function Posts() {
     label: player.firstName + " " + player.lastName,
     value: player.firstName + " " + player.lastName,
   }));
-
 
   return (
     <Layout>

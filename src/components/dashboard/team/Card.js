@@ -13,7 +13,7 @@ export default function Card({ index, item, setTeams }) {
   const router = useRouter();
 
   const fetctTeam = () => {
-    getData("/admin/teams")
+    getData("/teams")
     .then((data) => {
       setTeams(data);
     });

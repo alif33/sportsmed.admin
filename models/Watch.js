@@ -1,17 +1,18 @@
 import mongoose from 'mongoose';
 
 const watchSchema = new mongoose.Schema(
-    {
-        videoId: {
-            type: String,
-            required: true,
-            trim: true
-        },
+    {   
         title: {
             type: String,
             required: true,
             trim: true
         },
+        videoId: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
         slug: {
             type: String
         },

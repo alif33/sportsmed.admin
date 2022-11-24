@@ -21,7 +21,7 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     setDisable(true);
-    postData("/admin/login", data, setDisable).then(res => {
+    postData("/admin/signin", data, setDisable).then(res => {
       console.log(res);
       if (res?.success) {
         cookies.set(

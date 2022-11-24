@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
-// export const ROOT_URL = `http://localhost:3000/`;
-// export const APP_URL = `http://localhost:3000/`;
+export const ROOT_URL = `http://localhost:4000/`;
+export const APP_URL = `http://localhost:4000/`;
 
-export const ROOT_URL = `https://sportsmed-admin.vercel.app/`;
-export const APP_URL = `https://sportsmed-admin.vercel.app/`;
+// export const ROOT_URL = `https://sportsmed-admin.vercel.app/`;
+// export const APP_URL = `https://sportsmed-admin.vercel.app/`;
 
 export const IMAGE_URL = `${APP_URL}storage`;
-export const API_URL = `${APP_URL}api/`;
+export const API_URL = `${APP_URL}api`;
 
 const api = axios.create({
     baseURL: API_URL

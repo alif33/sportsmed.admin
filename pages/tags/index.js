@@ -38,7 +38,7 @@ export default function Tags() {
     }
 
     const onSubmit = async data => {
-        const {isAdmin, token} = await adminAuthStatus(); 
+        const { token } = await adminAuthStatus(); 
         setDisable(true)
         await authPost('/admin/tag', data, token)
         .then(res=>{

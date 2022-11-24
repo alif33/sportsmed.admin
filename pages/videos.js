@@ -34,7 +34,7 @@ export default function Videos() {
   }, []);
 
   const fetchVideo = () => {
-    getData("watches").then((data) => {
+    getData("/videos").then((data) => {
       setVideos(data);
       setLoading(false);
     });
@@ -52,7 +52,7 @@ export default function Videos() {
 
     const { token } = await adminAuthStatus();
     setDisable(true);
-    authPost("/admin/watch", {...data, videoId: youtube_parser(data.videoUri)}, token).then((res) => {
+    authPost("/admin/video", {...data, videoId: youtube_parser(data.videoUri)}, token).then((res) => {
       if (res?.success) {
         toast.success(`${res.message}`);
         setDisable(false);
@@ -62,12 +62,16 @@ export default function Videos() {
         toast.error(res.error);
         setDisable(false);
       }
-    });
+    }).then(err=>{
+      if(err){
+        setDisable(false);
+      }
+    })
   };
 
   const handleDelete = async (_id) => {
     const { token } = await adminAuthStatus();
-    deleteData(`/admin/watch?_id=${_id}`, token)
+    deleteData(`/admin/video?_id=${_id}`, token)
       .then(res => {
         if (res?.success) {
           fetchVideo()
@@ -256,3 +260,14 @@ export const getServerSideProps = adminAuth((context) => {
     props: {},
   };
 });
+
+
+// 8-9
+// 9-10
+// 10-11
+// 11-12
+// 12-1
+
+// 2-3
+// 3-4
+// 4-5

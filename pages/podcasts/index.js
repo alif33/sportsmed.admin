@@ -43,13 +43,14 @@ export default function Home() {
   const onSubmit = async(data) => {
     setDisable(true);
     const { token } = await adminAuthStatus();
-    const formData = new FormData();
-    formData.append("title", data.title);
-    formData.append("audioUri", data.audioUri);
-    formData.append("description", data.description);
-    formData.append("image", data.image[0]);
+    // const _data = await new FormData();
+    // await _data.append("title", data.title);
+    // await _data.append("audioUri", data.audioUri);
+    // await _data.append("description", data.description);
+    // await _data.append("image", data.image[0]);
 
-    authPost("/admin/podcast", formData, token).then((res) => {
+    authPost("/admin/podcast", data, token).then((res) => {
+      console.log("submit", data);
       if (res?.success) {
         getData("/podcasts").then((res) => setPodcasts(res));
         toast.success(`${res.message}`);
@@ -66,7 +67,7 @@ export default function Home() {
     deleteData(`/admin/podcast/${id}`, token).then((res) => {
       if (res?.success) {
         toast.success(res.message);
-        getData("podcasts").then((res) => setPodcasts(res));
+        getData("/podcasts").then((res) => setPodcasts(res));
       } else {
         toast.error(res.error);
       }

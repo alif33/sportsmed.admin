@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { League, Man, Team } from "../../src/components/Icon";
 import Layout from "../../src/vuexy/Layout";
-import { getData, postData } from "../../__lib__/helpers/HttpService";
+import { getData, authPost } from "../../__lib__/helpers/HttpService";
 import { adminAuth } from "../../__lib__/helpers/requireAuthentication";
-import GroupWise from "../../src/components/dashboard/player/GroupWise";
 import Card from "../../src/components/dashboard/team/Card";
+import { adminAuthStatus } from "../../__lib__/helpers/Cookiehandler";
 
 export default function Players() {
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ export default function Players() {
 
 
   useEffect(() => {
-    getData("/admin/teams").then((data) => {
+    getData("/teams").then((data) => {
       if(data){
        setTeams(data);
        setLoading(false);
@@ -31,12 +31,13 @@ export default function Players() {
 
 
   const onSubmit = async (data) => {
+    const { token } = await adminAuthStatus();
     setDisable(true);
-    postData("/admin/team", data, setDisable)
+    authPost("/admin/team", data, token)
     .then((res) => {
       setDisable(false);
       if (res?.success) {
-        getData("/admin/teams").then((data) => {
+        getData("/teams").then((data) => {
           if(data){
            setTeams(data);
            setLoading(false);
@@ -74,7 +75,7 @@ export default function Players() {
                                 required: "name is required",
                               })}
                               id="nameVerticalIcons"
-                              placeholder="First Name"
+                              placeholder="Team Name"
                               type="text"
                               className="form-control"
                             />

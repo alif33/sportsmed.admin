@@ -24,7 +24,8 @@ export default function Players() {
   }, []);
 
   const fetctPlayer = () => {
-    getData("/players").then((data) => {
+    getData("/players?sort=league")
+    .then((data) => {
      if(data){
       setPlayers(data);
       setLoading(false);
@@ -57,7 +58,6 @@ export default function Players() {
     await InsertPlayer(formData);
   };
 
-console.log(players)
 
   return (
     <Layout>
